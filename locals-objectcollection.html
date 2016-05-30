@@ -60,8 +60,8 @@ Example:
       </div> -->
 
           <template is="dom-repeat" items="{{dataset}}">
-            <div id="total" on-tap="next">
-            <locals-objectrender on-tap="gotoDetail" key="{{dataset.key}}" objectdata="{{item}}" class="foo"></locals-objectrender>
+            <div id="total">
+            <locals-objectrender on-detail-tapped="gotoDetail" key="{{dataset.key}}" objectdata="{{item}}" class="foo"></locals-objectrender>
             </div>
           </template>
 
@@ -126,8 +126,11 @@ Example:
  
       },
 
-      next: function(){
-        this.fire('to-detail');
+      
+
+      gotoDetail: function(e){
+        console.log(e.detail);
+        this.fire('to-detail', e.detail);
       },
 
 
