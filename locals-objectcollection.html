@@ -47,24 +47,24 @@ Example:
         padding-left: 10vw; 
       }
       #total {
-        /*background-color: red;*/
+/*        width: 500px;
+        height: 500px;
+        background-color: red;*/
+/*        border:1px solid red;*/
+
       }
       /* DOES THIS WORK? */
       ::-webkit-scrollbar { 
           display: none; 
       }
     </style>
+<!-- <div id="total" on-tap="gotoDetail"></div> -->
       <div id="fooContainer">
-<!--       <div id="total" on-tap="next">
-        <h1>HARRO!</h1>
-      </div> -->
-
           <template is="dom-repeat" items="{{dataset}}">
             <div id="total">
             <locals-objectrender on-detail-tapped="gotoDetail" key="{{dataset.key}}" objectdata="{{item}}" class="foo"></locals-objectrender>
             </div>
           </template>
-
       </div>
   </template>
 
